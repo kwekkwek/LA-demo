@@ -12,6 +12,7 @@ struct Demo_live_activitiesApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .navigationTitle("Flight Schedule")
         }
     }
 }
