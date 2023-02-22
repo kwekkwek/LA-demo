@@ -28,7 +28,7 @@ struct ContentView: View {
         FlightData(
             airlinesName: "Citilink",
             flightNumber: "QC 682",
-            status: .arrived,
+            status: .inAir,
             airportOriginName: AirportData(country: "Jakarta", name: "CGK", time: "9:00 AM", terminal: "2D"),
             airportDestination: AirportData(country: "Bali", name: "DPS", time: "11:50 AM", terminal: "1"),
             duration: "1h 50m"
@@ -94,22 +94,25 @@ struct FlightStatusIcon: View {
                 Image(systemName: "airplane.departure")
                     .resizable()
                     .renderingMode(.template)
+                    .scaleEffect(1.3)
                     .frame(width: 15, height: 15)
                     .padding()
                     .background(.gray)
                     .clipShape(Circle())
             case .inAir:
-                VStack {
-//                    AirplaneAnimationView()
-                    Text("In Air")
-                        .font(.body)
-                        .bold()
-                        .foregroundColor(.baseGreen)
-                }
+                Image("onFlight")
+                    .resizable()
+                    .renderingMode(.template)
+                    .frame(width: 15, height: 15)
+                    .scaleEffect(2)
+                    .padding()
+                    .background(.gray)
+                    .clipShape(Circle())
             case .landed:
                 Image(systemName: "airplane.arrival")
                     .resizable()
                     .renderingMode(.template)
+                    .scaleEffect(1.3)
                     .frame(width: 15, height: 15)
                     .padding()
                     .background(.gray)
