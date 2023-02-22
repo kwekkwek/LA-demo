@@ -13,24 +13,24 @@ struct ContentView: View {
             airlinesName: "Garuda Indonesia",
             flightNumber: "GA 448",
             status: .scheduled("2 Hours"),
-            airportOriginName: AirportData(country: "Jakarta", name: "CGK", time: "7:30 AM", terminal: "3"),
-            airportDestination: AirportData(country: "Surabaya", name: "SUB", time: "9:40 AM", terminal: "1"),
+            airportOriginName: AirportData(country: "Jakarta", name: "CGK", time: "7:30 AM", terminal: "3", status: .onTime),
+            airportDestination: AirportData(country: "Surabaya", name: "SUB", time: "9:40 AM", terminal: "1", status: .onTime),
             duration: "1h 40m"
         ),
         FlightData(
             airlinesName: "Air Asia",
             flightNumber: "QZ 266",
             status: .takeOff,
-            airportOriginName: AirportData(country: "Indonesia", name: "CGK", time: "8:30 AM", terminal: "2"),
-            airportDestination: AirportData(country: "Singapore", name: "SIN", time: "11:20 AM", terminal: "1"),
+            airportOriginName: AirportData(country: "Indonesia", name: "CGK", time: "8:30 AM", terminal: "2", status: .onTime),
+            airportDestination: AirportData(country: "Singapore", name: "SIN", time: "11:20 AM", terminal: "1", status: .delay("20 minutes")),
             duration: "1h 53m"
         ),
         FlightData(
             airlinesName: "Citilink",
             flightNumber: "QC 682",
             status: .inAir,
-            airportOriginName: AirportData(country: "Jakarta", name: "CGK", time: "9:00 AM", terminal: "2D"),
-            airportDestination: AirportData(country: "Bali", name: "DPS", time: "11:50 AM", terminal: "1"),
+            airportOriginName: AirportData(country: "Jakarta", name: "CGK", time: "9:00 AM", terminal: "2D", status: .onTime),
+            airportDestination: AirportData(country: "Bali", name: "DPS", time: "11:50 AM", terminal: "1", status: .onTime),
             duration: "1h 50m"
         )
         

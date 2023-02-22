@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct FlightData: Identifiable, Equatable {
+struct FlightData: Codable, Identifiable, Equatable {
     let id = UUID()
     let airlinesName: String
     let flightNumber: String
@@ -17,18 +17,41 @@ struct FlightData: Identifiable, Equatable {
     let duration: String
 }
 
-struct AirportData: Equatable {
+struct AirportData: Codable, Equatable {
     let country: String
     let name: String
     let time: String
     let terminal: String
+    let status: FlightTimeStatus
 }
 
-enum FlightStatus: Equatable {
+enum FlightStatus: Codable, Hashable, Equatable {
     case takeOff
     case inAir
     case landed
     case arrived
     case scheduled(String)
     case canceled
+}
+
+enum FlightTimeStatus: Codable, Hashable, Equatable {
+    case onTime
+    case delay(String)
+}
+
+extension FlightStatus {
+    var wording: String {
+        switch self {
+        case .takeOff:
+            return "Now Departing"
+        case .inAir:
+            return "Landing in"
+        case .landed, .arrived:
+            return "Claim baggage"
+        case let .scheduled(time):
+            return "Gate departure In \(time)"
+        case .canceled:
+            return "Flight canceled"
+        }
+    }
 }
