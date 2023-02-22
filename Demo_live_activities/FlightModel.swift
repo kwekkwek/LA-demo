@@ -24,10 +24,11 @@ struct AirportData {
     let terminal: String
 }
 
-enum FlightStatus {
+enum FlightStatus: Equatable {
     case takeOff
     case inAir
     case landed
     case arrived
     case scheduled(String)
+    case canceled
 }

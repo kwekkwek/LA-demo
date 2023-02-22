@@ -7,7 +7,25 @@
 		<key>Demo_live_activities.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>2</integer>
+		</dict>
+		<key>LiveActivitiesExtension.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>1CFD3B6829A36F030059EABD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>1CFD3B8429A3D01A0059EABD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

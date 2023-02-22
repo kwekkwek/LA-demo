@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import ActivityKit
 
 struct ContentView: View {
     private let flightDatas: [FlightData] = [
@@ -28,7 +29,7 @@ struct ContentView: View {
         FlightData(
             airlinesName: "Citilink",
             flightNumber: "QC 682",
-            status: .arrived,
+            status: .inAir,
             airportOriginName: AirportData(country: "Jakarta", name: "CGK", time: "9:00 AM", terminal: "2D"),
             airportDestination: AirportData(country: "Bali", name: "DPS", time: "11:50 AM", terminal: "1"),
             duration: "1h 50m"
@@ -54,7 +55,8 @@ struct ContentView: View {
                     }
                     .tint(.indigo)
                     Button {
-                        print("start widget")
+//                        print("start widget")
+                        self.startWidget()
                     } label: {
                         Label("", systemImage: "play.fill")
                     }
@@ -71,19 +73,98 @@ struct ContentView: View {
     init() {
            UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.white]
        }
+    
+    func startWidget() {
+//        let activityInfo = ActivityAuthorizationInfo()
+//        guard activityInfo.areActivitiesEnabled else { return }
+//        let attr = LiveActivitiesAttributes(name: "ABC")
+//        let initialData = LiveActivitiesAttributes.ContentState(value: 100)
+//        
+//        do {
+//            try Activity<LiveActivitiesAttributes>.request(
+//                attributes: attr,
+//                content: ActivityContent<LiveActivitiesAttributes.ContentState>(state: initialData, staleDate: .distantFuture)
+//            )
+//        } catch {
+//            print(error.localizedDescription)
+//        }
+    }
+    
+    func updateWidget() {
+        // disini update ContentState = new value
+    }
+    
+    func removeWidget() {
+        // remove the widget do there
+    }
 }
 
 struct FlightStatusIcon: View {
+    let status: FlightStatus
     var body: some View {
         VStack {
-            Image(systemName: "airplane")
+            switch status {
+            case .takeOff:
+                Image(systemName: "airplane.departure")
+                    .resizable()
+                    .renderingMode(.template)
+                    .frame(width: 15, height: 15)
+                    .padding()
+                    .background(.gray)
+                    .clipShape(Circle())
+            case .inAir:
+                VStack {
+//                    AirplaneAnimationView()
+                    Text("In Air")
+                        .font(.body)
+                        .bold()
+                        .foregroundColor(.baseGreen)
+                }
+            case .landed:
+                Image(systemName: "airplane.arrival")
+                    .resizable()
+                    .renderingMode(.template)
+                    .frame(width: 15, height: 15)
+                    .padding()
+                    .background(.gray)
+                    .clipShape(Circle())
+            case .arrived:
+                Image(systemName: "checkmark")
+                    .resizable()
+                    .renderingMode(.template)
+                    .frame(width: 15, height: 15)
+                    .padding()
+                    .background(Color.baseGreen)
+                    .clipShape(Circle())
+            case .scheduled(let string):
+                ScheduledFlight(text: string)
+            case .canceled:
+                Image(systemName: "xmark")
+                    .resizable()
+                    .renderingMode(.template)
+                    .frame(width: 15, height: 15)
+                    .padding()
+                    .background(Color.red)
+                    .clipShape(Circle())
+            }
+        }
+    }
+}
+
+struct ScheduledFlight: View {
+    let text: String
+    var body: some View {
+        VStack {
+            Image(systemName: "clock.fill")
                 .resizable()
                 .renderingMode(.template)
-                .frame(width: 15, height: 15)
+                .frame(width: 20, height: 20)
+                .foregroundColor(.green)
+            Text(text)
+                .font(.body)
+                .foregroundColor(.baseGreen)
+                .bold()
         }
-        .padding()
-        .background(.gray)
-        .clipShape(Circle())
     }
 }
 
@@ -92,7 +173,6 @@ struct OriginIcon: View {
         Image(systemName: "arrow.up.forward.circle.fill")
             .resizable()
             .frame(width: 20, height: 20)
-            .foregroundColor(Color.baseGreen)
     }
 }
 
@@ -101,7 +181,15 @@ struct DestinationIcon: View {
         Image(systemName: "arrow.down.right.circle.fill")
             .resizable()
             .frame(width: 20, height: 20)
-            .foregroundColor(Color.baseGreen)
+    }
+}
+
+struct AirlinesIcon: View {
+    let iconName: String
+    var body: some View {
+        Image(uiImage: UIImage(named: "garuda")!)
+            .resizable()
+            .frame(width: 20, height: 20)
     }
 }
 
@@ -109,12 +197,15 @@ struct AirportView: View {
     let time: String
     let originName: String
     let isUsingOrigin: Bool
+    let flightStatus: FlightStatus
     var body: some View {
         HStack(spacing: 4) {
             if isUsingOrigin {
                 OriginIcon()
+                    .foregroundColor(flightStatus == .canceled ? .red : .baseGreen)
             } else {
                 DestinationIcon()
+                    .foregroundColor(flightStatus == .canceled ? .red : .baseGreen)
             }
             Text(originName)
                 .font(.body)
@@ -122,7 +213,7 @@ struct AirportView: View {
                 .bold()
             Text(time)
                 .font(.body)
-                .foregroundColor(.baseGreen)
+                .foregroundColor(flightStatus == .canceled ? .red : .baseGreen)
                 .bold()
         }
     }
@@ -133,9 +224,10 @@ struct FlightScheduleView: View {
     var body: some View {
         VStack {
             HStack(alignment: .center, spacing: 16) {
-                FlightStatusIcon()
+                FlightStatusIcon(status: flightData.status)
                 VStack(alignment: .leading, spacing: 8) {
                     HStack {
+//                        AirlinesIcon(iconName: "citilink")
                         Text(flightData.flightNumber)
                             .font(.title3)
                             .foregroundColor(.white)
@@ -149,9 +241,9 @@ struct FlightScheduleView: View {
                         .bold()
                         .foregroundColor(.white)
                     HStack(spacing: 16) {
-                        AirportView(time: "\(flightData.airportOriginName.time)", originName: "\(flightData.airportOriginName.name)", isUsingOrigin: true)
+                        AirportView(time: "\(flightData.airportOriginName.time)", originName: "\(flightData.airportOriginName.name)", isUsingOrigin: true, flightStatus: flightData.status)
                         
-                        AirportView(time: "\(flightData.airportDestination.time)", originName: "\(flightData.airportDestination.name)", isUsingOrigin: false)
+                        AirportView(time: "\(flightData.airportDestination.time)", originName: "\(flightData.airportDestination.name)", isUsingOrigin: false, flightStatus: flightData.status)
                     }
                 }
             }
