@@ -1,11 +1,11 @@
 {
   "images" : [
     {
-      "filename" : "aircraft.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "airasia.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
