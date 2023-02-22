@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct FlightData: Identifiable {
+struct FlightData: Identifiable, Equatable {
     let id = UUID()
     let airlinesName: String
     let flightNumber: String
@@ -17,17 +17,18 @@ struct FlightData: Identifiable {
     let duration: String
 }
 
-struct AirportData {
+struct AirportData: Equatable {
     let country: String
     let name: String
     let time: String
     let terminal: String
 }
 
-enum FlightStatus {
+enum FlightStatus: Equatable {
     case takeOff
     case inAir
     case landed
     case arrived
     case scheduled(String)
+    case canceled
 }
