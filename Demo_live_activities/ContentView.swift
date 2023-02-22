@@ -13,7 +13,7 @@ struct ContentView: View {
             airlinesName: "Garuda Indonesia",
             flightNumber: "GA 448",
             status: .scheduled("2 Hours"),
-            airportOriginName: AirportData(country: "Jakarta", name: "CGK", time: "7:30 AM", terminal: "3", status: .onTime),
+            airportOrigin: AirportData(country: "Jakarta", name: "CGK", time: "7:30 AM", terminal: "3", status: .onTime),
             airportDestination: AirportData(country: "Surabaya", name: "SUB", time: "9:40 AM", terminal: "1", status: .onTime),
             duration: "1h 40m"
         ),
@@ -21,7 +21,7 @@ struct ContentView: View {
             airlinesName: "Air Asia",
             flightNumber: "QZ 266",
             status: .takeOff,
-            airportOriginName: AirportData(country: "Indonesia", name: "CGK", time: "8:30 AM", terminal: "2", status: .onTime),
+            airportOrigin: AirportData(country: "Indonesia", name: "CGK", time: "8:30 AM", terminal: "2", status: .onTime),
             airportDestination: AirportData(country: "Singapore", name: "SIN", time: "11:20 AM", terminal: "1", status: .delay("20 minutes")),
             duration: "1h 53m"
         ),
@@ -29,7 +29,7 @@ struct ContentView: View {
             airlinesName: "Citilink",
             flightNumber: "QC 682",
             status: .inAir,
-            airportOriginName: AirportData(country: "Jakarta", name: "CGK", time: "9:00 AM", terminal: "2D", status: .onTime),
+            airportOrigin: AirportData(country: "Jakarta", name: "CGK", time: "9:00 AM", terminal: "2D", status: .onTime),
             airportDestination: AirportData(country: "Bali", name: "DPS", time: "11:50 AM", terminal: "1", status: .onTime),
             duration: "1h 50m"
         )
@@ -44,22 +44,35 @@ struct ContentView: View {
                         .background(Color.baseBlack)
                         .listRowInsets(EdgeInsets())
                         .listRowBackground(Color.baseBlack)
+                        .swipeActions {
+                            Button {
+                                print("stop widget")
+                                Task {
+                                    await FlightMonitorLA.shared.remove(flightNumber: data.flightNumber)
+                                }
+                            } label: {
+                                Label( "", systemImage: "stop")
+                            }
+                            .tint(.purple)
+                            Button {
+                                print("update widget")
+                                Task {
+                                    await FlightMonitorLA.shared.update(flightNumber: data.flightNumber)
+                                }
+                            } label: {
+                                Label( "", systemImage: "slowmo")
+                            }
+                            .tint(.indigo)
+                            Button {
+                                print("start widget")
+                                FlightMonitorLA.shared.startLA(data: data)
+                            } label: {
+                                Label("", systemImage: "play.fill")
+                            }
+                            .tint(.red)
+                        }
                 }
-                .navigationTitle("Menu")
-                .swipeActions {
-                    Button {
-                        print("update widget")
-                    } label: {
-                        Label( "", systemImage: "slowmo")
-                    }
-                    .tint(.indigo)
-                    Button {
-                        print("start widget")
-                    } label: {
-                        Label("", systemImage: "play.fill")
-                    }
-                    .tint(.red)
-                }
+                .navigationTitle("Flight Lists")
             }
             .listStyle(.plain)
             .listItemTint(.baseBlack)
@@ -70,18 +83,6 @@ struct ContentView: View {
     
     init() {
         UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.white]
-    }
-    
-    func startWidget() {
-        
-    }
-    
-    func updateWidget() {
-        
-    }
-    
-    func stopWidget() {
-        
     }
 }
 
@@ -218,12 +219,12 @@ struct FlightScheduleView: View {
                             .font(.title3)
                             .foregroundColor(.white)
                     }
-                    Text("\(flightData.airportOriginName.country) to \(flightData.airportDestination.country)")
+                    Text("\(flightData.airportOrigin.country) to \(flightData.airportDestination.country)")
                         .font(.title2)
                         .bold()
                         .foregroundColor(.white)
                     HStack(spacing: 16) {
-                        AirportView(time: flightData.airportOriginName.time, originName: flightData.airportOriginName.name, isUsingOrigin: true, flightStatus: flightData.status)
+                        AirportView(time: flightData.airportOrigin.time, originName: flightData.airportOrigin.name, isUsingOrigin: true, flightStatus: flightData.status)
                         
                         AirportView(time: flightData.airportDestination.time, originName: flightData.airportDestination.name, isUsingOrigin: false, flightStatus: flightData.status)
                     }

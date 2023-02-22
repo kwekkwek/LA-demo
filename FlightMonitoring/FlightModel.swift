@@ -12,7 +12,7 @@ struct FlightData: Codable, Identifiable, Equatable {
     let airlinesName: String
     let flightNumber: String
     let status: FlightStatus
-    let airportOriginName: AirportData
+    let airportOrigin: AirportData
     let airportDestination: AirportData
     let duration: String
 }

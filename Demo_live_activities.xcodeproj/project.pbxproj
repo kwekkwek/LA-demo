@@ -16,12 +16,16 @@
 		1C6A15E429A5C5B800F1D043 /* FlightMonitoringView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6A15E229A5C48700F1D043 /* FlightMonitoringView.swift */; };
 		1C6A15E529A5C5CC00F1D043 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFD3B7F29A3784A0059EABD /* Color.swift */; };
 		1C6A15E629A5C5D000F1D043 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFD3B7D29A377D80059EABD /* Extension.swift */; };
-		1C6A19A329A6558500F1D043 /* FlightModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFD3B7B29A372540059EABD /* FlightModel.swift */; };
+		1C6A19B329A67E0F00F1D043 /* FlightModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFD3B7B29A372540059EABD /* FlightModel.swift */; };
+		1C6A19B429A67E1100F1D043 /* FlightModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFD3B7B29A372540059EABD /* FlightModel.swift */; };
+		1C6A19B629A67EA300F1D043 /* FlightMonitorLA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6A19B529A67EA300F1D043 /* FlightMonitorLA.swift */; };
+		1C6A19B729A67EBF00F1D043 /* FlightMonitorLA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6A19B529A67EA300F1D043 /* FlightMonitorLA.swift */; };
+		1C6A19B829A67FB700F1D043 /* FlightMonitoring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6A15D629A5C41D00F1D043 /* FlightMonitoring.swift */; };
+		1C6A19BA29A6807D00F1D043 /* FlightMonitoringView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6A15E229A5C48700F1D043 /* FlightMonitoringView.swift */; };
 		1CFD3B6D29A36F030059EABD /* Demo_live_activitiesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFD3B6C29A36F030059EABD /* Demo_live_activitiesApp.swift */; };
 		1CFD3B6F29A36F030059EABD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFD3B6E29A36F030059EABD /* ContentView.swift */; };
 		1CFD3B7129A36F040059EABD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CFD3B7029A36F040059EABD /* Assets.xcassets */; };
 		1CFD3B7529A36F040059EABD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CFD3B7429A36F040059EABD /* Preview Assets.xcassets */; };
-		1CFD3B7C29A372540059EABD /* FlightModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFD3B7B29A372540059EABD /* FlightModel.swift */; };
 		1CFD3B7E29A377D80059EABD /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFD3B7D29A377D80059EABD /* Extension.swift */; };
 		1CFD3B8029A3784A0059EABD /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFD3B7F29A3784A0059EABD /* Color.swift */; };
 /* End PBXBuildFile section */
@@ -59,6 +63,7 @@
 		1C6A15D829A5C41D00F1D043 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1C6A15DA29A5C41D00F1D043 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1C6A15E229A5C48700F1D043 /* FlightMonitoringView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightMonitoringView.swift; sourceTree = "<group>"; };
+		1C6A19B529A67EA300F1D043 /* FlightMonitorLA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightMonitorLA.swift; sourceTree = "<group>"; };
 		1CFD3B6929A36F030059EABD /* Demo_live_activities.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo_live_activities.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CFD3B6C29A36F030059EABD /* Demo_live_activitiesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Demo_live_activitiesApp.swift; sourceTree = "<group>"; };
 		1CFD3B6E29A36F030059EABD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -102,11 +107,13 @@
 		1C6A15D329A5C41C00F1D043 /* FlightMonitoring */ = {
 			isa = PBXGroup;
 			children = (
+				1CFD3B7B29A372540059EABD /* FlightModel.swift */,
 				1C6A15D429A5C41C00F1D043 /* FlightMonitoringBundle.swift */,
 				1C6A15D629A5C41D00F1D043 /* FlightMonitoring.swift */,
 				1C6A15D829A5C41D00F1D043 /* Assets.xcassets */,
 				1C6A15DA29A5C41D00F1D043 /* Info.plist */,
 				1C6A15E229A5C48700F1D043 /* FlightMonitoringView.swift */,
+				1C6A19B529A67EA300F1D043 /* FlightMonitorLA.swift */,
 			);
 			path = FlightMonitoring;
 			sourceTree = "<group>";
@@ -139,7 +146,6 @@
 				1CFD3B7029A36F040059EABD /* Assets.xcassets */,
 				1CFD3B7229A36F040059EABD /* Demo_live_activities.entitlements */,
 				1CFD3B7329A36F040059EABD /* Preview Content */,
-				1CFD3B7B29A372540059EABD /* FlightModel.swift */,
 				1CFD3B7F29A3784A0059EABD /* Color.swift */,
 			);
 			path = Demo_live_activities;
@@ -256,8 +262,9 @@
 			files = (
 				1C6A15E629A5C5D000F1D043 /* Extension.swift in Sources */,
 				1C6A15D529A5C41C00F1D043 /* FlightMonitoringBundle.swift in Sources */,
+				1C6A19B629A67EA300F1D043 /* FlightMonitorLA.swift in Sources */,
 				1C6A15E529A5C5CC00F1D043 /* Color.swift in Sources */,
-				1C6A19A329A6558500F1D043 /* FlightModel.swift in Sources */,
+				1C6A19B329A67E0F00F1D043 /* FlightModel.swift in Sources */,
 				1C6A15E429A5C5B800F1D043 /* FlightMonitoringView.swift in Sources */,
 				1C6A15D729A5C41D00F1D043 /* FlightMonitoring.swift in Sources */,
 			);
@@ -267,11 +274,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1CFD3B7C29A372540059EABD /* FlightModel.swift in Sources */,
 				1CFD3B6F29A36F030059EABD /* ContentView.swift in Sources */,
+				1C6A19B829A67FB700F1D043 /* FlightMonitoring.swift in Sources */,
 				1CFD3B6D29A36F030059EABD /* Demo_live_activitiesApp.swift in Sources */,
 				1CFD3B8029A3784A0059EABD /* Color.swift in Sources */,
+				1C6A19BA29A6807D00F1D043 /* FlightMonitoringView.swift in Sources */,
+				1C6A19B729A67EBF00F1D043 /* FlightMonitorLA.swift in Sources */,
 				1CFD3B7E29A377D80059EABD /* Extension.swift in Sources */,
+				1C6A19B429A67E1100F1D043 /* FlightModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -464,6 +474,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Demo_live_activities/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -501,6 +512,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Demo_live_activities/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
