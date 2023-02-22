@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C6A15D029A5C41C00F1D043 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C6A15CF29A5C41C00F1D043 /* WidgetKit.framework */; };
+		1C6A15D229A5C41C00F1D043 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C6A15D129A5C41C00F1D043 /* SwiftUI.framework */; };
+		1C6A15D529A5C41C00F1D043 /* FlightMonitoringBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6A15D429A5C41C00F1D043 /* FlightMonitoringBundle.swift */; };
+		1C6A15D729A5C41D00F1D043 /* FlightMonitoring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6A15D629A5C41D00F1D043 /* FlightMonitoring.swift */; };
+		1C6A15D929A5C41D00F1D043 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C6A15D829A5C41D00F1D043 /* Assets.xcassets */; };
+		1C6A15DD29A5C41D00F1D043 /* FlightMonitoringExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 1C6A15CD29A5C41C00F1D043 /* FlightMonitoringExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		1C6A15E429A5C5B800F1D043 /* FlightMonitoringView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6A15E229A5C48700F1D043 /* FlightMonitoringView.swift */; };
+		1C6A15E529A5C5CC00F1D043 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFD3B7F29A3784A0059EABD /* Color.swift */; };
+		1C6A15E629A5C5D000F1D043 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFD3B7D29A377D80059EABD /* Extension.swift */; };
+		1C6A19A329A6558500F1D043 /* FlightModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFD3B7B29A372540059EABD /* FlightModel.swift */; };
 		1CFD3B6D29A36F030059EABD /* Demo_live_activitiesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFD3B6C29A36F030059EABD /* Demo_live_activitiesApp.swift */; };
 		1CFD3B6F29A36F030059EABD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFD3B6E29A36F030059EABD /* ContentView.swift */; };
 		1CFD3B7129A36F040059EABD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CFD3B7029A36F040059EABD /* Assets.xcassets */; };
@@ -16,7 +26,39 @@
 		1CFD3B8029A3784A0059EABD /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFD3B7F29A3784A0059EABD /* Color.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		1C6A15DB29A5C41D00F1D043 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1CFD3B6129A36F030059EABD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1C6A15CC29A5C41C00F1D043;
+			remoteInfo = FlightMonitoringExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		1C6A15DE29A5C41D00F1D043 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				1C6A15DD29A5C41D00F1D043 /* FlightMonitoringExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		1C6A15CD29A5C41C00F1D043 /* FlightMonitoringExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = FlightMonitoringExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		1C6A15CF29A5C41C00F1D043 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		1C6A15D129A5C41C00F1D043 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		1C6A15D429A5C41C00F1D043 /* FlightMonitoringBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightMonitoringBundle.swift; sourceTree = "<group>"; };
+		1C6A15D629A5C41D00F1D043 /* FlightMonitoring.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightMonitoring.swift; sourceTree = "<group>"; };
+		1C6A15D829A5C41D00F1D043 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1C6A15DA29A5C41D00F1D043 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1C6A15E229A5C48700F1D043 /* FlightMonitoringView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightMonitoringView.swift; sourceTree = "<group>"; };
 		1CFD3B6929A36F030059EABD /* Demo_live_activities.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo_live_activities.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CFD3B6C29A36F030059EABD /* Demo_live_activitiesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Demo_live_activitiesApp.swift; sourceTree = "<group>"; };
 		1CFD3B6E29A36F030059EABD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -29,6 +71,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		1C6A15CA29A5C41C00F1D043 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1C6A15D229A5C41C00F1D043 /* SwiftUI.framework in Frameworks */,
+				1C6A15D029A5C41C00F1D043 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1CFD3B6629A36F030059EABD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -39,10 +90,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1C6A15CE29A5C41C00F1D043 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1C6A15CF29A5C41C00F1D043 /* WidgetKit.framework */,
+				1C6A15D129A5C41C00F1D043 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1C6A15D329A5C41C00F1D043 /* FlightMonitoring */ = {
+			isa = PBXGroup;
+			children = (
+				1C6A15D429A5C41C00F1D043 /* FlightMonitoringBundle.swift */,
+				1C6A15D629A5C41D00F1D043 /* FlightMonitoring.swift */,
+				1C6A15D829A5C41D00F1D043 /* Assets.xcassets */,
+				1C6A15DA29A5C41D00F1D043 /* Info.plist */,
+				1C6A15E229A5C48700F1D043 /* FlightMonitoringView.swift */,
+			);
+			path = FlightMonitoring;
+			sourceTree = "<group>";
+		};
 		1CFD3B6029A36F030059EABD = {
 			isa = PBXGroup;
 			children = (
 				1CFD3B6B29A36F030059EABD /* Demo_live_activities */,
+				1C6A15D329A5C41C00F1D043 /* FlightMonitoring */,
+				1C6A15CE29A5C41C00F1D043 /* Frameworks */,
 				1CFD3B6A29A36F030059EABD /* Products */,
 			);
 			sourceTree = "<group>";
@@ -51,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				1CFD3B6929A36F030059EABD /* Demo_live_activities.app */,
+				1C6A15CD29A5C41C00F1D043 /* FlightMonitoringExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -81,6 +156,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		1C6A15CC29A5C41C00F1D043 /* FlightMonitoringExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1C6A15E129A5C41D00F1D043 /* Build configuration list for PBXNativeTarget "FlightMonitoringExtension" */;
+			buildPhases = (
+				1C6A15C929A5C41C00F1D043 /* Sources */,
+				1C6A15CA29A5C41C00F1D043 /* Frameworks */,
+				1C6A15CB29A5C41C00F1D043 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FlightMonitoringExtension;
+			productName = FlightMonitoringExtension;
+			productReference = 1C6A15CD29A5C41C00F1D043 /* FlightMonitoringExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		1CFD3B6829A36F030059EABD /* Demo_live_activities */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1CFD3B7829A36F040059EABD /* Build configuration list for PBXNativeTarget "Demo_live_activities" */;
@@ -88,10 +180,12 @@
 				1CFD3B6529A36F030059EABD /* Sources */,
 				1CFD3B6629A36F030059EABD /* Frameworks */,
 				1CFD3B6729A36F030059EABD /* Resources */,
+				1C6A15DE29A5C41D00F1D043 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				1C6A15DC29A5C41D00F1D043 /* PBXTargetDependency */,
 			);
 			name = Demo_live_activities;
 			productName = Demo_live_activities;
@@ -108,6 +202,9 @@
 				LastSwiftUpdateCheck = 1420;
 				LastUpgradeCheck = 1420;
 				TargetAttributes = {
+					1C6A15CC29A5C41C00F1D043 = {
+						CreatedOnToolsVersion = 14.2;
+					};
 					1CFD3B6829A36F030059EABD = {
 						CreatedOnToolsVersion = 14.2;
 					};
@@ -127,11 +224,20 @@
 			projectRoot = "";
 			targets = (
 				1CFD3B6829A36F030059EABD /* Demo_live_activities */,
+				1C6A15CC29A5C41C00F1D043 /* FlightMonitoringExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		1C6A15CB29A5C41C00F1D043 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1C6A15D929A5C41D00F1D043 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1CFD3B6729A36F030059EABD /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -144,6 +250,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		1C6A15C929A5C41C00F1D043 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1C6A15E629A5C5D000F1D043 /* Extension.swift in Sources */,
+				1C6A15D529A5C41C00F1D043 /* FlightMonitoringBundle.swift in Sources */,
+				1C6A15E529A5C5CC00F1D043 /* Color.swift in Sources */,
+				1C6A19A329A6558500F1D043 /* FlightModel.swift in Sources */,
+				1C6A15E429A5C5B800F1D043 /* FlightMonitoringView.swift in Sources */,
+				1C6A15D729A5C41D00F1D043 /* FlightMonitoring.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1CFD3B6529A36F030059EABD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -158,7 +277,72 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		1C6A15DC29A5C41D00F1D043 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1C6A15CC29A5C41C00F1D043 /* FlightMonitoringExtension */;
+			targetProxy = 1C6A15DB29A5C41D00F1D043 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		1C6A15DF29A5C41D00F1D043 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FlightMonitoring/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = FlightMonitoring;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "tokopedia.Demo-live-activities.FlightMonitoring";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1C6A15E029A5C41D00F1D043 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FlightMonitoring/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = FlightMonitoring;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "tokopedia.Demo-live-activities.FlightMonitoring";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 		1CFD3B7629A36F040059EABD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -271,6 +455,7 @@
 		1CFD3B7929A36F040059EABD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Demo_live_activities/Demo_live_activities.entitlements;
@@ -307,6 +492,7 @@
 		1CFD3B7A29A36F040059EABD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Demo_live_activities/Demo_live_activities.entitlements;
@@ -343,6 +529,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		1C6A15E129A5C41D00F1D043 /* Build configuration list for PBXNativeTarget "FlightMonitoringExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1C6A15DF29A5C41D00F1D043 /* Debug */,
+				1C6A15E029A5C41D00F1D043 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		1CFD3B6429A36F030059EABD /* Build configuration list for PBXProject "Demo_live_activities" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
