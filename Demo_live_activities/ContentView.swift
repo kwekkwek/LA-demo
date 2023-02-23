@@ -44,22 +44,28 @@ struct ContentView: View {
                         .background(Color.baseBlack)
                         .listRowInsets(EdgeInsets())
                         .listRowBackground(Color.baseBlack)
+                        .swipeActions {
+                            Button {
+                                print("Stop widget")
+                            } label: {
+                                Label( "", systemImage: "stop")
+                            }
+                            .tint(.purple)
+                            Button {
+                                print("update widget")
+                            } label: {
+                                Label( "", systemImage: "slowmo")
+                            }
+                            .tint(.indigo)
+                            Button {
+                                print("start widget")
+                            } label: {
+                                Label("", systemImage: "play.fill")
+                            }
+                            .tint(.red)
+                        }
                 }
-                .navigationTitle("Menu")
-                .swipeActions {
-                    Button {
-                        print("update widget")
-                    } label: {
-                        Label( "", systemImage: "slowmo")
-                    }
-                    .tint(.indigo)
-                    Button {
-                        print("start widget")
-                    } label: {
-                        Label("", systemImage: "play.fill")
-                    }
-                    .tint(.red)
-                }
+                .navigationTitle("Tokoflight Schedule")
             }
             .listStyle(.plain)
             .listItemTint(.baseBlack)
@@ -70,18 +76,6 @@ struct ContentView: View {
     
     init() {
         UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.white]
-    }
-    
-    func startWidget() {
-        
-    }
-    
-    func updateWidget() {
-        
-    }
-    
-    func stopWidget() {
-        
     }
 }
 
