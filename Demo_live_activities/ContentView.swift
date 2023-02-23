@@ -10,12 +10,12 @@ import SwiftUI
 struct ContentView: View {
     private let flightDatas: [FlightData] = [
         FlightData(
-            airlinesName: "Garuda Indonesia",
-            flightNumber: "GA 448",
+            airlinesName: "American Airlines",
+            flightNumber: "AA3093",
             status: .scheduled("2 Hours"),
-            airportOriginName: AirportData(country: "Jakarta", name: "CGK", time: "7:30 AM", terminal: "3", status: .onTime),
-            airportDestination: AirportData(country: "Surabaya", name: "SUB", time: "9:40 AM", terminal: "1", status: .onTime),
-            duration: "1h 40m"
+            airportOriginName: AirportData(country: "Los Angeles", name: "LAX", time: "16:32 AM", terminal: "5", status: .onTime),
+            airportDestination: AirportData(country: "San Francisco", name: "SFO", time: "17:52 AM", terminal: "1", status: .onTime),
+            duration: "1h 20m"
         ),
         FlightData(
             airlinesName: "Air Asia",
